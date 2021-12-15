@@ -1,20 +1,22 @@
 package com.ecommerce;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 
-@SpringBootApplication
+import com.ecommerce.util.LoginValidatorUtil;
+
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class EcommerceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EcommerceApplication.class, args);
-	}
+		// TODO Auto-generated method stub
 	
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
+			SpringApplication.run(EcommerceApplication.class, args);
+			
+		}
+
+	
 
 }
